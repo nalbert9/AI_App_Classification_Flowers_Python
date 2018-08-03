@@ -8,7 +8,7 @@ This project was created as part of a submission for the Artificial Intelligence
 </p>
 <b>Accomplishment:</b> 
 
-- Train Image classifier model, which uses Deep Learning pre-trained neural networks (VGG and DenseNet)
+- Train Image classifier model, which uses Deep Learning pre-trained neural networks (VGG/DenseNet)
 to train a neural network to recognize different species of flowers (dataset of 102 flower categories) ;
 
 - Python app which allows user to input some arguments in order to train and make prediction.
