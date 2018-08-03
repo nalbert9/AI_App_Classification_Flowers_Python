@@ -1,6 +1,6 @@
 # AI application for indentifying flower taxanomy
 
-## Transfer Learning for Deep Learning Python
+## Transfer Learning for Deep Learning - PyTorch
 
 This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via Udacity.com.
 <p align="center">
