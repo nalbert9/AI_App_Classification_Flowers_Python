@@ -13,7 +13,7 @@ to train a neural network to recognize different species of flowers (dataset of 
 
 - Python app which allows user to input some arguments in order to train and make prediction.
 
-<b>Command line application</b> 
+<b>Commands line application</b> 
  
 Train a new network on a data set with ```train.py```
 
