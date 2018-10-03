@@ -2,7 +2,6 @@
 
 ## Transfer Learning for Deep Learning - PyTorch
 
-This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via Udacity.com
 <p align="center">
 	<img src="assets/Flowers.png" align="middle" alt="drawing" width="500px">
 </p>
