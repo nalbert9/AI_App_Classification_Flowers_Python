@@ -1,4 +1,4 @@
-# AI application for indentifying flower taxanomy
+# AI App in Python for Flowers Classification 
 
 ## Transfer Learning for Deep Learning - PyTorch
 
@@ -7,10 +7,10 @@
 </p>
 <b>Accomplishment:</b> 
 
-- Train Image classifier model, which uses Deep Learning pre-trained neural networks (VGG/DenseNet)
+- Train Image Classifier Model, which uses Deep Learning Pre-trained Neural Networks (VGG/DenseNet)
 to train a neural network to recognize different species of flowers (dataset of 102 flower categories) ;
 
-- Python app which allows user to input some arguments in order to train and make prediction.
+- Python App which allows user to input some arguments in order to train and make prediction.
 
 <b>Commands line application</b> 
  
