@@ -1,6 +1,6 @@
 # AI App in Python for Flowers Classification 
 
-## Transfer Learning for Deep Learning - PyTorch
+## Transfer Learning - PyTorch
 
 <p align="center">
 	<img src="assets/Flowers.png" align="middle" alt="drawing" width="500px">
