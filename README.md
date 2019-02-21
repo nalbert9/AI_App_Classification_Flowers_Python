@@ -1,6 +1,6 @@
 ## AI App in Python for Flowers Classification using PyTorch Framework
 
-This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via [Udacity](https://eu.udacity.com/course/ai-programming-python-nanodegree--nd089). 
+This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via [Udacity](https://eu.udacity.com/course/ai-programming-python-nanodegree--nd089). GPU is necessary for training the Deep Learning model.
 
 <p align="center">
 	<img src="assets/Flowers.png" align="middle" alt="drawing" width="500px">
