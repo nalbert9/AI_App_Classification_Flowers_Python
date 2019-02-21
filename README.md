@@ -15,20 +15,27 @@ to train a neural network to recognize different species of flowers (dataset of 
 ### Local Environment Instructions
 
 1. Clone the repository, and navigate to the downloaded folder. This may take a minute or two to clone due to the included image data
-
-	`$ git clone https://github.com/gfoxx29/AI_App_Classification_Flowers_Python.git`
+```sh
+$ git clone https://github.com/gfoxx29/AI_App_Classification_Flowers_Python.git
+```
 
 2. Create (and activate) a new Anaconda environment, named ai-app with Python 3.6
-	- Linux or Mac:
-	`conda create -n ai-app python=3.6`
-	`source activate ai-app`
 
-	- Windows:
-	`conda create --name ai-app python=3.6`
-	`activate ai-app`
+- Linux or Mac:
+```sh
+	$ conda create -n ai-app python=3.6`
+	$ source activate ai-app`
+```
 
+- Windows:
+```sh
+	$ conda create --name ai-app python=3.6`
+	$ activate ai-app`
+```
 3. Install PyTorch and torchvision; this should install the latest version of PyTorch
-`conda install pytorch torchvision cudatoolkit=9.0 -c pytorch`
+```sh
+conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
+```
 
 ### Examples
 **Command Line** 
@@ -54,4 +61,9 @@ Train a new network on a data set with ```train.py```
 <b>You can imagine using something like this in a phone app that tells you the name of the flower your camera is looking at.</b>
 
 <p align="center">
-	<img src="assets/inference_example.png" align="middle" alt="drawing" width="250px"> </p>
+	<img src="assets/inference_example.png" align="middle" alt="drawing" width="250px"> 
+</p>
+
+## License
+
+The contents of this repository are covered under the [MIT License](LICENSE).
