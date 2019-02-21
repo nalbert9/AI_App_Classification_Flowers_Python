@@ -1,6 +1,6 @@
 # AI App in Python for Flowers Classification using PyTorch Framework
 
-This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via Udacity.com. 
+This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via [Udacity](https://eu.udacity.com/course/ai-programming-python-nanodegree--nd089). 
 
 <p align="center">
 	<img src="assets/Flowers.png" align="middle" alt="drawing" width="500px">
@@ -13,20 +13,22 @@ to train a neural network to recognize different species of flowers (dataset of 
 - Python App which allows user to input some arguments in order to train and make prediction.
 
 ## Local Environment Instructions
-1. Clone the repository, and navigate to the downloaded folder. This may take a minute or two to clone due to the included image data.
-$ https://github.com/gfoxx29/AI_App_Classification_Flowers_Python
-2. Create (and activate) a new environment, named ai-app with Python 3.6. If prompted to proceed with the install (Proceed [y]/n) type y.
 
-Linux or Mac:
-conda create -n ai-app python=3.6
-source activate ai-app
+1. Clone the repository, and navigate to the downloaded folder. This may take a minute or two to clone due to the included image data
 
-Windows:
-conda create --name ai-app python=3.6
-activate ai-app
+$ https://github.com/gfoxx29/AI_App_Classification_Flowers_Python.git
 
-3. Install PyTorch and torchvision; this should install the latest version of PyTorch.
-conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
+2. Create (and activate) a new environment, named ai-app with Python 3.6
+	- Linux or Mac:
+	`conda create -n ai-app python=3.6`
+	`source activate ai-app`
+
+	- Windows:
+	`conda create --name ai-app python=3.6`
+	`activate ai-app`
+
+3. Install PyTorch and torchvision; this should install the latest version of PyTorch
+`conda install pytorch torchvision cudatoolkit=9.0 -c pytorch`
 
 ## Examples
 **Command Line** 
