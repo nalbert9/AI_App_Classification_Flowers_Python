@@ -205,7 +205,7 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
             running_loss = 0.0
             running_corrects = 0
 
-            # Iterate over data.
+            # Iterate over data
             for inputs, labels in data_loaders[phase]:
                 inputs = inputs.to(device)
                 labels = labels.to(device)
