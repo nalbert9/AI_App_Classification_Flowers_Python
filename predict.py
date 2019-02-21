@@ -94,7 +94,7 @@ def load_checkpoint(filepath, gpu):
 def process_image(image):
     """ Inference for classification """
 
-    # Make tranformations resize, crop, center 
+    # Make tranformation resize, crop, center 
     resize_image = transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
