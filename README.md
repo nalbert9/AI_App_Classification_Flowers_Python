@@ -54,7 +54,6 @@ Train a new network on a data set with ```train.py```
 <b>You can imagine using something like this in a phone app that tells you the name of the flower your camera is looking at.</b>
 
 <p align="center">
-	<img src="assets/inference_example.png" align="middle" alt="drawing" width="250px">
-</p>
-## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+	<img src="assets/inference_example.png" align="middle" alt="drawing" width="250px"> </p>
+### License
+The contents of this repository are covered under the
