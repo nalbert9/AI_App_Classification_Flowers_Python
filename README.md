@@ -1,18 +1,22 @@
-# AI App in Python for Flowers Classification 
+# AI App in Python for Flowers Classification using PyTorch Framework
 
-## Transfer Learning - PyTorch
+This project was created as part of a submission for the Artificial Intelligence with Python Nanodegree via Udacity.com. 
 
 <p align="center">
 	<img src="assets/Flowers.png" align="middle" alt="drawing" width="500px">
 </p>
-<b>Accomplishment:</b> 
 
+## Accomplishment:
 - Train Image Classifier Model, which uses Deep Learning Pre-trained Neural Networks (VGG/DenseNet)
-to train a neural network to recognize different species of flowers (dataset of 102 flower categories) ;
+to train a neural network to recognize different species of flowers (dataset of 102 flower categories);
 
 - Python App which allows user to input some arguments in order to train and make prediction.
 
-<b>Commands line application</b> 
+## Installation
+Clone the GitHub repository and use Anaconda to install dependencies.
+
+## Examples
+_Command Line_ 
  
 Train a new network on a data set with ```train.py```
 
