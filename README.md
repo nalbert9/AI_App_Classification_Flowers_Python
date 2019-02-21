@@ -18,7 +18,7 @@ to train a neural network to recognize different species of flowers (dataset of 
 
 	`$ git clone https://github.com/gfoxx29/AI_App_Classification_Flowers_Python.git`
 
-2. Create (and activate) a new environment, named ai-app with Python 3.6
+2. Create (and activate) a new Anaconda environment, named ai-app with Python 3.6
 	- Linux or Mac:
 	`conda create -n ai-app python=3.6`
 	`source activate ai-app`
