@@ -56,6 +56,5 @@ Train a new network on a data set with ```train.py```
 <p align="center">
 	<img src="assets/inference_example.png" align="middle" alt="drawing" width="250px">
 </p>
-### License
-
+## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
