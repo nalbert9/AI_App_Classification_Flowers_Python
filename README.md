@@ -23,13 +23,13 @@ $ git clone https://github.com/gfoxx29/AI_App_Classification_Flowers_Python.git
 
 - Linux or Mac:
 ```sh
-	$ conda create -n ai-app python=3.7`
+	$ conda create -n ai-app python=3.7
 	$ source activate ai-app`
 ```
 
 - Windows:
 ```sh
-	$ conda create --name ai-app python=3.7`
+	$ conda create --name ai-app python=3.7
 	$ activate ai-app`
 ```
 3. Install PyTorch and torchvision; this should install the latest version of PyTorch
