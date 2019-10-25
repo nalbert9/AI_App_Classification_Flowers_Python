@@ -53,9 +53,9 @@ Train a new network on a data set with ```train.py```
 
 - Basic usage: ```python predict.py /path/to/image checkpoint```
 - Options:
-	- Return top **K** most likely classes: python predict.py input checkpoint ```--top_k 3```
-	- Use a mapping of categories to real names: ```python predict.py input checkpoint --category_names cat_to_name.json```
-	- Use GPU for inference: ```python predict.py input checkpoint --gpu```
+	- Return top **K** most likely classes: python predict.py --input checkpoint ```--top_k 3```
+	- Use a mapping of categories to real names: ```python predict.py --input checkpoint --category_names cat_to_name.json```
+	- Use GPU for inference: ```python predict.py --input checkpoint --gpu```
 
 
 <b>You can imagine using something like this in a phone app that tells you the name of the flower your camera is looking at.</b>
