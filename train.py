@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # DATE CREATED: 02/06/2018
-# REVISED DATE: 18/06/2018
+# REVISED DATE: 25/10/2019
 # PURPOSE: Developping AI application for Image Classifier
 # using deep learning model
 #
@@ -37,10 +37,10 @@ def main():
     model, epochs, hidden_units, optimizer, train_dataset, arch = train_model(
         in_arg.data_dir, in_arg.hidden_units, in_arg.arch, in_arg.learning_rate, in_arg.epochs, in_arg.save_dir, in_arg.gpu)
 
-
     # Save checkpoint
     model.class_to_idx = train_dataset.class_to_idx
-    check = save_checkpoint(in_arg.save_dir, model, epochs, hidden_units, optimizer, arch)
+    check = save_checkpoint(in_arg.save_dir, model,
+                            epochs, hidden_units, optimizer, arch)
 
     print('Checkpoint saved \n')
 
@@ -84,7 +84,7 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
                                      transforms.RandomHorizontalFlip(),
                                      transforms.RandomRotation(30),
                                      transforms.ToTensor(),
-                                     transforms.Normalize([0.485, 0.456, 0.406], 
+                                     transforms.Normalize([0.485, 0.456, 0.406],
                                                           [0.229, 0.224, 0.225])
                                      ]),
         'test': transforms.Compose([transforms.Resize(256),
@@ -103,25 +103,26 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
     }
 
     # Load datasets with ImageFolder
-    image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), 
-        data_transforms[x]) for x in list(data_transforms.keys())}
+    image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x),
+                                              data_transforms[x]) for x in list(data_transforms.keys())}
 
     # Using image datasets and the trainforms, define the dataloaders
     data_loaders = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=4,
-                                       shuffle=True, num_workers=4)
-        for x in list(data_transforms.keys())
-    }
+                                                   shuffle=True, num_workers=4)
+                    for x in list(data_transforms.keys())
+                    }
 
-    dataset_sizes = {x: len(image_datasets[x]) for x in list(image_datasets.keys())}
+    dataset_sizes = {x: len(image_datasets[x])
+                     for x in list(image_datasets.keys())}
 
     # Using vgg16 and densenet121 pre-trained networks
     if arch == 'vgg16':
         model = models.vgg16(pretrained=True)
         print('Architecture: ', arch, '\n')
-        input_units  = 25088
+        input_units = 25088
         hidden_units = 4096
         output_units = 102
-        drop_p       = 0.5
+        drop_p = 0.5
 
         # Define new untrained feed-forward network as a classifier
         for param in model.parameters():
@@ -179,7 +180,8 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
 
     # Create network, define the criterion and optimizer
     criterion = nn.NLLLoss()
-    optimizer = optim.SGD(model.classifier.parameters(), lr=0.001, momentum=0.9)
+    optimizer = optim.SGD(model.classifier.parameters(),
+                          lr=0.001, momentum=0.9)
 
     # Decay LR by a factor of 0.1 every 7 epochs
     scheduler = lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.1)
@@ -195,9 +197,9 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
         print('Epoch {}/{}'.format(epoch + 1, epochs))
         print('-' * 10)
 
+        # Each epoch has a training and validation phase
         for phase in ['train', 'valid']:
             if phase == 'train':
-                scheduler.step()
                 model.train()  # Set model to training mode
             else:
                 model.eval()   # Set model to evaluate mode
@@ -205,36 +207,40 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
             running_loss = 0.0
             running_corrects = 0
 
-            # Iterate over data
+            # Iterate over data.
             for inputs, labels in data_loaders[phase]:
                 inputs = inputs.to(device)
                 labels = labels.to(device)
 
+                # zero the parameter gradients
                 optimizer.zero_grad()
 
-                # Forward
-                # Track history if only in train
+                # forward
+                # track history if only in train
                 with torch.set_grad_enabled(phase == 'train'):
-                    outputs  = model(inputs)
+                    outputs = model(inputs)
                     _, preds = torch.max(outputs, 1)
-                    loss     = criterion(outputs, labels).item()
+                    loss = criterion(outputs, labels)
 
-                    # Backward + optimize only if in training phase
+                    # backward + optimize only if in training phase
                     if phase == 'train':
                         loss.backward()
                         optimizer.step()
 
-                # Statistics
-                running_loss     += loss.item() * inputs.size(0)
+                # statistics
+                running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
 
+            if phase == 'train':
+                scheduler.step()
+
             epoch_loss = running_loss / dataset_sizes[phase]
-            epoch_acc  = running_corrects.double() / dataset_sizes[phase]
+            epoch_acc = running_corrects.double() / dataset_sizes[phase]
 
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
 
-            # Deep copy the model
+            # deep copy the model
             if phase == 'valid' and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())
@@ -244,9 +250,9 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
-    print('Best val Acc: {:4f}'.format(best_acc), '\n')
+    print('Best val Acc: {:4f}'.format(best_acc))
 
-    # Load best model weights
+    # load best model weights
     model.load_state_dict(best_model_wts)
 
     # Testing network
@@ -256,22 +262,24 @@ def train_model(data_dir, hidden_units, arch, learning_rate, epochs, save_dir, g
 
     for inputs, labels in data_loaders['test']:
         inputs, labels = inputs.to(device), labels.to(device)
-        outputs  = model(inputs)
+        outputs = model(inputs)
         equality = (labels.data == outputs.max(1)[1])
         accuracy += equality.type_as(torch.FloatTensor()).mean()
 
     train_dataset = image_datasets['train']
-    print("Test accuracy: {:.3f}".format(accuracy/len(data_loaders['test'])))
+    print("Test accuracy: {:.3f}".format(accuracy / len(data_loaders['test'])))
     print("Inference complete")
 
     return model, epochs, hidden_units, optimizer, train_dataset, arch
 
 # Save checkpoint
+
+
 def save_checkpoint(save_dir, model, epochs, hidden_units, optimizer, arch):
 
     checkpoint = {
         'arch': arch,
-        'epochs': epochs+1,
+        'epochs': epochs + 1,
         'hidden_units': hidden_units,
         'optimizer': optimizer.state_dict(),
         'class_to_idx': model.class_to_idx,
