@@ -16,7 +16,7 @@ to train a neural network to recognize different species of flowers (dataset of 
 
 1. Clone the repository, and navigate to the downloaded folder. This may take a minute or two to clone due to the included image data
 ```sh
-$ git clone https://github.com/gfoxx29/AI_App_Classification_Flowers_Python.git
+$ git clone https://github.com/nalbert9/AI_App_Classification_Flowers_Python.git
 ```
 
 2. Create (and activate) a new Anaconda environment, named ai-app with Python 3.7
