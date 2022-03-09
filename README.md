@@ -19,22 +19,11 @@ to train a neural network to recognize different species of flowers (dataset of 
 $ git clone https://github.com/nalbert9/AI_App_Classification_Flowers_Python.git
 ```
 
-2. Create (and activate) a new Anaconda environment, named ai-app with Python 3.7
+2. Create (and activate) a new [Anaconda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 
-- Linux or Mac:
-```sh
-	$ conda create -n ai-app python=3.7
-	$ source activate ai-app`
-```
-
-- Windows:
-```sh
-	$ conda create --name ai-app python=3.7
-	$ activate ai-app`
-```
 3. Install PyTorch and torchvision; this should install the latest version of PyTorch
 ```sh
-conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 ```
 
 ### Examples
